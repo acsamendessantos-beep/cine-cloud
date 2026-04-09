@@ -155,4 +155,5 @@ app.get('/series', async (req, res) => {
         console.error("Erro ao buscar séries:", err);
         res.status(500).json({ erro: "Erro ao buscar séries" });
     }
+    
 });

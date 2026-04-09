@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineCloud - Recuperar Senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Cine<span>Cloud</span></h1>
+            <p>Recuperação de conta</p>
+            <br>
+            <form id="form-recuperar">
+                <div class="input-group">
+                    <label>E-MAIL CADASTRADO</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>NOVA SENHA</label>
+                    <input type="password" id="nova-senha" placeholder="Digite a nova senha" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">Redefinir Senha</button>
+                <button type="button" class="btn-secondary" onclick="window.location.href='login.html'">Voltar</button>
+            </form>
+        </div>
+    </div>
+    <script src="esqueci-senha.js"></script>
+</body>
+</html>
