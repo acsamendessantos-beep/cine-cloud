@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineCloud - Início</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar"> <!-- Barra de navegação principal -->
+        <div class="nav-content"> <!-- Contêiner de conteúdo da navbar -->
+            <h1 onclick="window.location.reload()">Cine<span>Cloud</span></h1> <!-- Logo clicável que recarrega a página -->
+            <div class="user-menu"> <!-- Menu do usuário no canto superior direito -->
+                <nav class="category-menu">
+    <button onclick="filtrarTipo('todos')" class="active">Início</button>
+    <button onclick="filtrarTipo('serie')">Séries</button>
+    <button onclick="filtrarTipo('filme')">Filmes</button>
+</nav>
+                <span id="welcome-msg">Bem-vindo!</span> <!-- Mensagem de boas-vindas que será preenchida pelo home.js -->
+                <button onclick="logout()" class="btn-logout">Sair</button> <!-- Botão para fazer logout -->
+            </div>
+        </div>
+    </nav>
+    
+
+    <header class="main-header"> <!-- Cabeçalho principal da página -->
+        <div class="header-text"> <!-- Seção de texto do cabeçalho -->
+            <h2>Meu Catálogo</h2> <!-- Título principal -->
+            <p>Gerencie seus filmes e séries favoritos.</p> <!-- Descrição -->
+        </div>
+        <div class="header-actions"> <!-- Seção de ações (busca e adicionar) -->
+            <input type="text" id="search-input" placeholder="Buscar filmes e séries..." class="search-input"> <!-- Campo de busca para filtrar filmes -->
+            <button onclick="window.location.href='adicionar.html'" class="btn-add">+ Adicionar Filme</button> <!-- Botão para ir à página de adicionar filme -->
+            <button onclick="window.location.href='adicionar-serie.html'" class="btn-add">+ Adicionar Série</button> <!-- Botão para ir à página de adicionar série -->
+        </div>
+    </header>
+
+    <main class="container"> <!-- Contêiner principal da página -->
+        <div id="catalog-sections"> <!-- Contêiner que será preenchido dinamicamente pelos filmes -->
+            <p>Carregando filmes...</p> <!-- Mensagem de carregamento -->
+        </div>
+    </main>
+
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+/* Centralizar as telas de login/cadastro */
+.auth-page {
+    display: flex; /* Flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que a página ocupe toda a altura da tela */
+    background-color: #f5f5f7; /* Cor de fundo suave (padrão Apple) */
+}
+
+.auth-card {
+    background: white; /* Fundo branco para destacar o card de autenticação */
+    padding: 40px; /* Espaçamento interno para um visual mais confortável */
+    border-radius: 18px; /* Cantos arredondados para um visual mais suave */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra suave para dar profundidade */
+    width: 100%; /* O card ocupa toda a largura disponível, mas será limitado pela max-width */
+    max-width: 400px; /* Limita a largura máxima do card para manter a legibilidade */
+    text-align: center; /* Centraliza o texto dentro do card */
+}
+
+.auth-card h1 span { color: #0071e3; } /* Azul do CineCloud para destacar o nome da plataforma */
+
+.input-group { /* Estilização dos grupos de input (label + input) */
+    text-align: left; /* Alinha o texto à esquerda para melhor legibilidade */
+    margin-bottom: 20px; /* Espaçamento entre os grupos de input para evitar que fiquem muito próximos */
+}
+
+.input-group label { /* Estilização das labels dos inputs */
+    display: block; /* Faz com que a label ocupe toda a linha, garantindo que o input fique abaixo dela */
+    font-size: 12px; /* Tamanho de fonte menor para as labels, seguindo o estilo Apple */
+    font-weight: bold; /* Deixa as labels em negrito para destacar o texto */
+    color: #86868b; /* Cor cinza para as labels, seguindo o estilo Apple */
+    margin-bottom: 5px; /* Espaçamento entre a label e o input para evitar que fiquem colados */
+}
+
+.input-group input { /* Estilização dos inputs de texto */
+    width: 100%; /* Faz com que os inputs ocupem toda a largura disponível dentro do card */
+    padding: 12px; /* Espaçamento interno para tornar os inputs mais confortáveis de usar */
+    border: 1px solid #d2d2d7; /* Borda cinza clara para os inputs, seguindo o estilo Apple */
+    border-radius: 8px; /* Cantos arredondados para um visual mais suave */
+    font-size: 16px; /* Tamanho de fonte confortável para leitura */
+}
+
+.btn-primary { /* Estilização do botão primário (login/cadastro) */
+    width: 100%; /* Faz com que o botão ocupe toda a largura disponível dentro do card */
+    background: #0071e3; /* Azul do CineCloud para o botão primário */
+    color: white; /* Texto branco para contraste com o fundo azul */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 12px; /* Espaçamento interno para um botão mais clicável */
+    border-radius: 8px; /* Cantos arredondados para um visual mais moderno */
+    font-weight: 600; /* Fonte em negrito para destacar o texto do botão */
+    cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+    margin-bottom: 10px; /* Espaçamento inferior para separar o botão do link de "Esqueci minha senha" */
+}
+
+.btn-secondary { /* Estilização do botão secundário (alternar entre login/cadastro) */
+    width: 100%; /* Faz com que o botão ocupe toda a largura disponível dentro do card */
+    background: none; /* Sem fundo para manter o estilo minimalista */
+    border: 1px solid #0071e3; /* Borda azul para o botão secundário, seguindo o estilo Apple */
+    color: #0071e3; /* Texto azul para o botão secundário para manter a consistência com a borda */
+    padding: 12px; /* Espaçamento interno para um botão mais clicável */
+    border-radius: 8px; /* Cantos arredondados para um visual mais moderno */
+    font-weight: 600; /* Fonte em negrito para destacar o texto do botão */
+    cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+}
+
+.forgot-password { /* Estilização do link de "Esqueci minha senha" */
+    display: block; /* Faz com que o link ocupe toda a linha, garantindo que fique abaixo do botão primário */
+    margin-top: 15px;/* Espaçamento superior para separar o link do botão primário */
+    color: #0071e3; /* Azul do CineCloud para o link de "Esqueci minha senha" */
+    text-decoration: none; /* Remove o sublinhado padrão dos links para um visual mais limpo */
+    font-size: 14px; /* Tamanho de fonte menor para o link, seguindo o estilo Apple */
+}
+/* Reset básico para tirar margens indesejadas */
+* {
+    margin: 0; /* Remove margens padrão de todos os elementos para evitar espaçamento indesejado */
+    padding: 0; /* Remove preenchimento padrão de todos os elementos para evitar espaçamento indesejado */
+    box-sizing: border-box; /* Corrigindo o erro de digitação anterior */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e legível, similar à usada pela Apple */
+}
+
+
+body { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    background-color: #f5f5f7; /* Cor de fundo suave (padrão Apple) */
+    color: #1d1d1f; /* Cor do texto para o conteúdo principal, seguindo o estilo Apple */
+}
+
+/* --- Barra de Navegação (Navbar) --- */
+.navbar {
+    background-color: #ffffff; /* Fundo branco para a barra de navegação, seguindo o estilo Apple */
+    padding: 1rem 5%; /* Espaçamento interno: 1rem vertical e 5% horizontal para responsividade */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra suave para dar profundidade à barra de navegação */
+    position: sticky; /* Fica presa no topo ao rolar */
+    top: 0; /*  Posição no topo da página */
+    z-index: 1000; /* Garante que a barra de navegação fique acima de outros elementos da página */
+}
+
+.nav-content { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    display: flex; /* Flexbox para alinhar logo e menu na mesma linha */
+    justify-content: space-between; /* Empurra logo pra esquerda e menu pra direita */
+    align-items: center; /* Alinha verticalmente ao centro */
+    max-width: 1200px; /* Limita a largura do conteúdo para melhor leitura e estética */
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+}
+
+h1 {
+    font-size: 1.5rem; /* Tamanho de fonte para o título da barra de navegação, seguindo o estilo Apple */
+    cursor: pointer; /* Cursor de ponteiro para indicar que o título é clicável (pode ser usado para voltar à página inicial) */
+}
+
+h1 span { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    color: #008ce3; /* Azul do CineCloud */
+}
+
+.user-menu { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    display: flex;/* Flexbox para alinhar o nome do usuário e o botão de logout na mesma linha */
+    align-items: center; /* Alinha verticalmente ao centro */
+    gap: 15px; /* Espaçamento entre o nome do usuário e o botão de logout para evitar que fiquem colados */
+}
+
+#welcome-msg { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    font-weight: 500; /* Peso da fonte para o nome do usuário, seguindo o estilo Apple */
+}
+
+.btn-logout { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    background: none; /* Sem fundo para manter o estilo minimalista */
+    border: 1px solid #ff3b30; /* Vermelho de destaque para logout */
+    color: #ff3b30; /* Mesma cor do texto para manter a consistência */
+    padding: 5px 15px; /* Tamanho reduzido para um botão mais discreto */
+    border-radius: 5px; /*  Cantos levemente arredondados */
+    cursor: pointer;/* Cursor de ponteiro para indicar que é clicável */
+    font-size: 0.9rem; /* Tamanho de fonte menor para um visual mais sutil */
+    transition: all 0.2s; /* Transição suave para hover */
+}
+
+.btn-logout:hover { /* Efeito de hover para o botão de logout */
+    background-color: #ff3b30; /* Fundo vermelho no hover para destacar a ação de logout */
+    color: white; /* Texto branco no hover para melhor contraste */
+}
+
+/* --- Cabeçalho Principal (Header) --- */
+.main-header { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    display: flex; /*   Flexbox para alinhar título e ações na mesma linha */
+    justify-content: space-between; /* Título pra esquerda, botão pra direita */
+    align-items: center; /* Alinha verticalmente ao centro */
+    max-width: 1200px; /* Limita a largura do conteúdo */
+    margin: 40px auto 20px; /* Margem superior maior para destacar o header, centralizado horizontalmente */
+    padding: 0 5%; /* Espaçamento horizontal para evitar que o conteúdo encoste nas bordas em telas menores */
+}
+
+.header-text h2 { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    font-size: 2rem; /* Tamanho maior para destacar o título principal */
+    margin-bottom: 5px; /* Espaço entre o título e a descrição */
+}
+
+.header-text p { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    font-size: 1rem; /* Tamanho menor para a descrição */          
+    color: #86868b; /* Cor cinza para a descrição, seguindo o estilo Apple */
+}
+
+.header-actions { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/  
+    display: flex; /* Flexbox para alinhar os elementos do header (input de busca e botão) */
+     align-items: center; /* Alinha verticalmente ao centro */
+    gap: 15px; /*  Espaçamento entre o input de busca e o botão */
+}
+
+.search-input { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    padding: 10px 15px; /* Espaçamento interno para o input de busca */
+    border: 1px solid #d2d2d7; /* Borda cinza clara para o input, seguindo o estilo Apple */
+    border-radius: 8px; /* Cantos arredondados para um visual mais suave */
+    font-size: 16px; /* Tamanho de fonte confortável para leitura */
+    width: 250px; /* Largura fixa para o input de busca */
+}
+
+.btn-add { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    background-color: #0071e3; /* Azul do CineCloud para o botão de adicionar filme */
+    color: #ffffff; /* Texto branco para contraste com o fundo azul */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 12px 24px; /* Espaçamento interno para um botão mais clicável */
+    border-radius: 8px; /* Cantos arredondados para um visual mais moderno */
+    cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+    font-weight: 600; /* Fonte em negrito para destacar o texto do botão */
+    font-size: 1rem; /* Tamanho de fonte adequado para um botão principal */
+    transition: background-color 0.2s; /* Transição suave para a mudança de cor no hover */
+}
+
+.btn-add:hover { /* Efeito de hover para o botão de adicionar filme */
+    background-color: #0056b3; /* Azul mais escuro no hover para indicar interatividade */
+}
+
+/* --- Container e Seções de Gênero --- */
+.container { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    max-width: 1200px; /* Limita a largura do conteúdo para melhor leitura e estética */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: 20px 5% 50px; /*  Espaçamento interno: 20px no topo, 5% nas laterais para responsividade, e 50px na parte inferior para dar espaço ao conteúdo */
+}
+
+.genre-section { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    margin-bottom: 40px; /* Espaçamento entre as seções de gênero para evitar que fiquem muito próximas */
+}
+
+.genre-title { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    font-size: 1.5rem; /* Tamanho maior para destacar o título do gênero */
+    margin-bottom: 15px;/* Espaçamento entre o título do gênero e a linha de filmes */
+    color: #1d1d1f; /* Cor do texto para o título do gênero, seguindo o estilo Apple */
+}
+
+.movies-row { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    display: flex; /* Flexbox para alinhar os cards de filme em uma linha */
+    gap: 15px; /* Espaçamento entre os cards de filme para evitar que fiquem colados */
+    overflow-x: auto; /* Permite rolagem horizontal se os cards excederem a largura da tela */
+    padding-bottom: 10px; /* Espaçamento inferior para evitar que a barra de rolagem fique muito próxima dos cards */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.movies-row::-webkit-scrollbar { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* --- Card do Filme (Estilo Netflix/Apple) --- */
+.movie-card { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    background-color: #ffffff; /* Fundo branco para destacar a capa do filme */
+    border-radius: 12px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que a imagem não saia do card */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;/* Transição suave para hover */
+    display: flex; /* Flexbox para alinhar a imagem e as informações do filme */
+    flex-direction: column; /* Coluna para que a imagem fique em cima e as informações embaixo */
+    min-width: 200px;/* Largura mínima para os cards, garantindo que fiquem legíveis mesmo em telas menores */
+    position: relative; /* Necessário para posicionar o overlay de play */
+}
+
+.movie-card:hover { /* Efeito de hover para os cards de filme */
+    transform: scale(1.05); /* Aumenta ligeiramente no hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover para destacar o card */
+}
+
+.movie-card img { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    height: 300px; /* Altura fixa para as capas */
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+}
+
+.movie-info { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    padding: 15px; /* Espaçamento interno para as informações do filme */
+    flex-grow: 1; /* Garante que a info ocupe o espaço restante */
+}
+
+.movie-info h3 { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    font-size: 1.1rem; /*   Tamanho de fonte para o título do filme */
+    margin-bottom: 5px; /* Espaçamento entre o título e a descrição */
+    color: #1d1d1f; /* Cor do texto para o título do filme, seguindo o estilo Apple */
+}
+
+.movie-info p { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    font-size: 0.9rem; /* Tamanho de fonte menor para a descrição do filme */
+    color: #86868b; /* Cor cinza para a descrição do filme, seguindo o estilo Apple */  
+    margin: 0; /* Remover margem padrão */
+}
+
+.play-overlay { /* cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    position: absolute; /* Posicionamento absoluto para cobrir toda a área do card */
+    top: 0; /* Início do card */
+    left: 0; /* Início do card */
+    right: 0; /* Fim do card */
+    bottom: 0; /* Fim do card */
+    background: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente para destacar o botão de play */
+    display: flex; /* Flexbox para centralizar o botão de play */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease; /* Transição suave para aparecer/desaparecer */
+}
+
+.movie-card:hover .play-overlay { /* Exibe o overlay de play ao passar o mouse sobre o card */
+    opacity: 1; /* Torna o overlay visível no hover */
+}
+
+.play-btn { /*cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente para o botão de play */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 50%; /* Botão circular para o ícone de play */
+    width: 60px; /* Largura do botão de play */
+    height: 60px;/* Altura do botão de play */
+    font-size: 24px; /* Tamanho do ícone de play */
+    color: #000; /* Cor do ícone de play para contraste com o fundo branco */
+    cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+    display: flex; /* Flexbox para centralizar o ícone de play dentro do botão */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    transition: background 0.3s ease; /* Transição suave para a mudança de cor no hover */
+}
+
+.play-btn:hover { /* Efeito de hover para o botão de play */
+    background: #fff; /* Fundo branco sólido no hover para destacar ainda mais o botão de play */
+} 
+
+/* Responsividade */
+@media (max-width: 768px) { /* Ajustes para telas menores, como tablets e smartphones */
+    .main-header { /* cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+        flex-direction: column; /** Alinha o título e as ações em coluna para melhor visualização em telas menores */
+        gap: 20px; /* Espaçamento entre o título e as ações quando estão em coluna */
+        text-align: center; /* Centraliza o texto do título para um visual mais equilibrado em telas menores */
+    }
+
+    .header-actions { /* cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+        flex-direction: column; /* Alinha o input de busca e o botão em coluna para melhor visualização em telas menores */
+        width: 100%; /* Faz com que as ações ocupem toda a largura disponível em telas menores */
+    }
+
+    .search-input { /* cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+        width: 100%; /* Faz com que o input de busca ocupe toda a largura disponível em telas menores */
+    }
+
+    .btn-add { /* cabeçalho, barra de navegação, container, seção de gênero, card do filme*/
+        width: 100%; /* Faz com que o botão de adicionar filme ocupe toda a largura disponível em telas menores */
+    }
+
+    .movies-row { 
+        gap: 10px; /* Reduz o espaçamento entre os cards de filme para melhor aproveitamento do espaço em telas menores */
+    }
+
+    .movie-card { 
+        min-width: 150px; /* Reduz a largura mínima dos cards de filme para melhor visualização em telas menores */
+    }
+
+    .movie-card img {
+        height: 225px; /* Reduz a altura das capas dos filmes para manter a proporção em telas menores */
+    }
+    
+    
+}
+/* --- Menu de Categorias (Filmes/Séries) --- */
+.category-menu {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 5%;
+}
+
+.category-menu button {
+    background: none;
+    border: none;
+    color: #86868b; /* Cinza estilo Apple */
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding-bottom: 8px;
+    border-bottom: 3px solid transparent;
+}
+
+.category-menu button:hover {
+    color: #1d1d1f;
+}
+
+/* Estado Ativo - Onde a mágica acontece */
+.category-menu button.active {
+    color: #0071e3; /* Azul CineCloud */
+    font-weight: 700;
+    border-bottom: 3px solid #0071e3; /* Linha azul de destaque */
+}
+
+/* Se o seu fundo for escuro como no print, use estas cores: */
+body.dark-mode .category-menu button {
+    color: #a1a1a6;
+}
+body.dark-mode .category-menu button.active {
+    color: #ffffff;
+    border-bottom-color: #0071e3;
+}

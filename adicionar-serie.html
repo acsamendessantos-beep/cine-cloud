@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>CineCloud - Adicionar Série</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>Cine<span>Cloud</span></h1>
+        </div>
+    </nav>
+
+    <div class="main-header" style="justify-content: center; margin-top: 50px;">
+        <div class="auth-card" style="background: white; padding: 30px; border-radius: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 100%; max-width: 400px;">
+            <h2 style="margin-bottom: 20px; text-align: center;">Adicionar Série</h2>
+
+            <form id="add-serie-form">
+                <div style="margin-bottom: 15px;">
+                    <label>Título</label>
+                    <input type="text" id="titulo" placeholder="Nome da Série" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 8px; border: 1px solid #ddd;" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label>URL da Capa</label>
+                    <input type="text" id="capa" placeholder="Link da imagem" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 8px; border: 1px solid #ddd;" required>
+                </div>
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <input type="text" id="genero" placeholder="Gênero (ex: Mistério)" style="width: 60%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;" required>
+                    
+                    <input type="number" id="temporadas" placeholder="Temporadas" min="1" style="width: 40%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; outline: none; transition: border-color 0.2s;" required>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label>Link da Plataforma (Netflix, Prime, etc)</label>
+                    <input type="text" id="link" placeholder="Cole o link da série aqui" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;" required>
+                </div>
+
+                <button type="submit" class="btn-add" style="width: 100%; margin-bottom: 10px;">Salvar Série</button>
+                <button type="button" onclick="window.location.href='home.html'" style="width: 100%; background: none; border: none; color: #86868b; cursor: pointer;">Voltar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="adicionar-serie.js"></script>
+</body>
+</html>

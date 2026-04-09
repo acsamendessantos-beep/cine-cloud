@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineCloud - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Cine<span>Cloud</span></h1>
+            <p>Cadastre-se para gerenciar seus filmes.</p>
+            <br>
+            
+            <form id="register-form"> <!-- Formulário de cadastro com ID para referência no register.js -->
+                <div class="input-group"> <!-- Agrupamento visual para o campo de nome -->
+                    <label>NOME COMPLETO</label> <!-- Label descritivo do campo -->
+                    <input type="text" id="nome" placeholder="Seu nome" required> <!-- Campo de texto para o nome com validação obrigatória -->
+                </div>
+
+                <div class="input-group"> <!-- Agrupamento visual para o campo de email -->
+                    <label>E-MAIL</label> <!-- Label descritivo do campo -->
+                    <input type="email" id="email" placeholder="exemplo@email.com" required> <!-- Campo de email com validação obrigatória -->
+                </div>
+                
+                <div class="input-group"> <!-- Agrupamento visual para o campo de senha -->
+                    <label>CRIE UMA SENHA</label> <!-- Label descritivo do campo -->
+                    <input type="password" id="password" placeholder="Mínimo 6 caracteres" required> <!-- Campo de senha oculta com validação obrigatória -->
+                </div>
+                
+                <button type="submit" class="btn-primary">Criar minha conta</button> <!-- Botão para enviar o formulário de cadastro -->
+                <button type="button" class="btn-secondary" onclick="window.location.href='login.html'">Já tenho conta</button> <!-- Botão para ir para a página de login -->
+            </form>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>
